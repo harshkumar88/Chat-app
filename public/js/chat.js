@@ -3,10 +3,11 @@ const socket=io()
 //Elements
 const $messageForm =document.querySelector("#message-form")
 const $messageFormInput = $messageForm.querySelector('input')
-const $messageFormButton = $messageForm.querySelector('button')
+const $messageFormButton = $messageForm.querySelector('#send')
 const $locationButton= document.querySelector("#send-location")
 const $messages=document.querySelector("#messages")
 const getname=document.querySelector('#getname')
+
 
 //Templates
 const messageTemplate=document.querySelector("#message-template").innerHTML
@@ -94,6 +95,32 @@ socket.on('roomData',({room,users})=>{
 
 
 //message-form
+
+$(document).ready(function(){
+        
+
+        $("#emoji").click(function(){
+            $("#div").show()
+        })
+
+    $("#div button").click(function(e){
+        var idClicked = e.target.id;
+        var id="#"+idClicked
+        var value=$(id).html()
+       var first= $("#input").val()
+       $("#input").val(first+value)
+       $("#input").focus()
+    });
+
+    $("#send").click(function(){
+        $("#div").hide()
+    })
+
+
+})
+
+
+     
 
 $messageForm.addEventListener('submit',(e)=>{
     

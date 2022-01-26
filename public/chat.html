@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <title>Chat App</title>
         <link rel="icon" href="/img/favicon.png">
         <link rel="stylesheet" href="/css/styles.min.css">
+        <style>
+            #div{
+                margin-left: 20px;
+                margin-bottom: -25px;
+                border-radius: 50%;
+                background-color: gray;
+                width:150px;
+                display: none;
+
+               
+            }
+            #div button{
+                border-radius: 50%;
+                background-color: gray;
+            }
+            
+        </style>
     </head>
     <body>
 
@@ -12,12 +30,16 @@
 
             </div>
             <div class="chat__main">
+                
                 <div id="messages" class="chat__messages"></div>
-        
-                  <div class="compose">
-                    <form id="message-form">
-                        <input type="text" name="message" placeholder="message">
-                        <button >Send</button>
+                <div id="div"><button id="btn1">😀</button><button id="btn2">🤣</button><button id="btn3">😛</button><br>
+                  <button id="btn4">😷</button><button id="btn5">🤢</button><button id="btn6">👌</button>
+                </div>
+                  <div class="compose" id="compose">
+                   
+                    <form id="message-form"><button id="emoji" type="button">Emoji</button>
+                        <input type="text" name="message" placeholder="message" id="input">
+                        <button id="send">Send</button>
                     </form>
                     
                     <button id="send-location">Send Location</button>
@@ -57,11 +79,13 @@
              </ul>
         </script>
         
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
         <script src="/socket.io/socket.io.js"></script>
         <script src="/js/chat.js"></script>
+      
         
     </body>
 </html>
